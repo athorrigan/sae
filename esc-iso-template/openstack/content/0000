@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<esc>
+    <esc-cloud>
+        <network gateway="10.123.141.254" hostname="esc-standalone" ipv6_autoconf="no" networking="yes" networking_ipv6="yes" nozeroconf="yes">
+            <interface bootproto="none" defroute="yes" device="eth0" ipaddr="10.123.141.252" ipv4_failure_fatal="yes" ipv6init="no" name="System_eth0" netmask="255.255.255.240" nm_controlled="no" onboot="yes" type="Ethernet"/>
+            <resolv/>
+        </network>
+        <http_rest enabled="true"/>
+        <auth enabled="false"/>
+        <https_rest enabled="false"/>
+    </esc-cloud>
+    <esc-service>
+        <service-init/>
+    </esc-service>
+</esc>

@@ -1,0 +1,12 @@
+{
+    "files": [
+        {
+            "path": "esc-config.xml",
+            "content_path": "/content/0000"
+        },
+        {
+            "path": "esc_params.conf",
+            "content_path": "/content/0001"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+#cloud-config
+runcmd:
+ - [ cloud-init-per, once, rc_idle, sh, -c, "pwd"]
+ - [ cloud-init-per, once, confd_keygen_root, sh, -c, "/usr/bin/escadm confd keygen --user root"]
+ - [ cloud-init-per, once, var_confd_homes_ssh_mkdir, sh, -c, "mkdir -p /var/confd/homes/admin/.ssh/"]
+ - [ cloud-init-per, once, confd_keygen_admin, sh, -c, "/usr/bin/escadm confd keygen --user admin"]
+ - [ cloud-init-per, once, var_confd_homes_chown, sh, -c, "chown -R tomcat:tomcat /var/confd/homes/admin/"]
+ - [ cloud-init-per, once, esc_service_start, sh, -c, "chkconfig esc_service on  && service esc_service start"]
+users:
+ - name: admin
+   gecos: User created by cloud-init
+   passwd: xy7gqo67gn3nM
+   lock-passwd: false
+   homedir: /home/admin
+   sudo: ALL=(ALL) ALL
+ssh_pwauth: True
+bootcmd:
+ - [ cloud-init-per, once, bc_idle, sh, -c, "pwd"]
+ - [ cloud-init-per, once, esc_log_rotation, sh, -c, "/usr/bin/escadm log rotate"]
+ - [ cloud-init-per, once, esc_ui_startup, sh, -c, "$(esc_version -p | awk '{printf $NF}')/esc-scripts/escadm.py ui enable-startup"]
+ - [ cloud-init-per, once, disable_root_login, sh, -c, "sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config"]
+write_files:
+ - path: /opt/cisco/esc/esc-config/esc-config.yaml
+   content: |
+     resources:
+       confd:
+         init_aaa_users:
+         - key: c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDeFkwMzByaEMzSXlWekF2bStISVlmMmpkdmRUZndTTEpCRjVPTjZoUEgvK2FBTkkzb0NCSmJndjhPdjRtVXUvYmlCYmsyS240QW52Ni9ROE1YWGducnZST241MlJuODN2ejRCWTAwT1h2SzZrT2YrUnZkSDFtNjhscVlrWU9uZVErNEtOak5tQXRwV0huT0xCZE1mZ2pzTmF1SlF1QVJUMEtDS2VBS3k4aUVqSUZpZDhWZ3NiSlA0aDNpTzdjcTkza0E1ZGFQb0xiNWRKRVp3ZW15WS9ENGp6ZnJUeDVKWFFuMy80SDdaQVZPaWcyNzBGUnlGVkZhNFl1VXNYcDk1d3QveHdpc0RUREVCYTYydjkxQzdXamtaNy9rYkRlRW9VSU9OZExqdEdvbU84c2JRUUJoZHBVTTZlNXJkeUl2VzQ3YTZYOFA5N2lBR3JrQ09qMWVHNkYgeGlhb3hpbnlAWElBT1hJTlktTS1SRVhXCg==
+           name: admin
+           passwd: $6$rounds=4096$adWA0K3AZ30Pe$EHUa2Z7o/Rvhz8Pk2eET5Rhto3G7MmKjUef.AyOJNtBfRo0fUapoxmFd7LUn2PEUPWtWPl5tCD7pO9bae672T1 
+         option: start-phase0
+       esc_service:
+         type: group
