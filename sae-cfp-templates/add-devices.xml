@@ -64,7 +64,7 @@
     <name>SAE-ESC</name>
     <address>10.1.60.56</address>
     <port>830</port>
-    <authgroup>esc-authgroup</authgroup>
+    <authgroup>esc-admin</authgroup>
     <device-type>
       <netconf>
         <ned-id xmlns:ned="http://tail-f.com/ns/ncs-ned">ned:netconf</ned-id>
