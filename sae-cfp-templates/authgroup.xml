@@ -1,0 +1,31 @@
+<!-- It contains information necessary for VNF authentication
+necessary if you are using managed VNF deployment. 
+User can edit the file as per VNF authentication information.
+[Mandatory to load ONLY if VNF needs to managed by NSO] -->
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <authgroups>
+      <group>
+        <name>nexus-admin</name>
+        <default-map>
+          <remote-name>csp-admin</remote-name>
+          <remote-password>C1sco123</remote-password>
+        </default-map>
+      </group>
+      <group>
+        <name>csp-admin</name>
+        <default-map>
+          <remote-name>C1sco123</remote-name>
+        </default-map>
+      </group> 
+      <group>
+        <name>vnf-admin</name>
+        <default-map>
+          <remote-name>admin</remote-name>
+          <remote-password>C1sco123</remote-password>
+          <remote-secondary-password>C1sco123</remote-secondary-password>
+        </default-map>
+      </group>           
+    </authgroups>
+  </devices>
+</config>
