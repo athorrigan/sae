@@ -4,7 +4,6 @@
         <sae-provider>SAE-Provider</sae-provider>
         <sae-tenant>SAE-Tenant</sae-tenant>
         <resource-pools>
-            <vlan-pool>VLAN-DATA-POOL</vlan-pool>
             <mgmt-ip-pool>IP-MGMT-POOL</mgmt-ip-pool>
             <internal-ip-pool>IP-DATA-POOL</internal-ip-pool>
         </resource-pools>
