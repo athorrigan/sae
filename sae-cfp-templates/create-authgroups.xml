@@ -9,7 +9,7 @@ User can edit the file as per VNF authentication information.
         <name>esc-admin</name>
         <default-map>
           <remote-name>admin</remote-name>
-          <remote-password>cisco123</remote-password>
+          <remote-password>admin</remote-password>
         </default-map>
       </group>
       <group>
@@ -22,7 +22,8 @@ User can edit the file as per VNF authentication information.
       <group>
         <name>csp-admin</name>
         <default-map>
-          <remote-name>C1sc023#</remote-name>
+          <remote-name>admin</remote-name>
+          <remote-password>C1sc023#</remote-password>
         </default-map>
       </group> 
       <group>
