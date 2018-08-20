@@ -16,6 +16,7 @@
             </switching>
             <compute-clusters>
                 <name>SVS-NFV-Cluster1</name>
+                <vlan-pool>VLAN-DATA-POOL</vlan-pool>
                 <leaf-switches>
                     <name>SAE-N9K1</name>
                 </leaf-switches>
