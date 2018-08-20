@@ -1,6 +1,15 @@
 <config xmlns="http://tail-f.com/ns/config/1.0">
     <sae-site xmlns="http://com/cisco/nso/sae-core-fp-cfs">
         <site>SVS-RTP</site>
+        <resource-pools>
+            <mgmt-ip-pool>IP-MGMT-POOL</mgmt-ip-pool>
+            <internal-ip-pool>IP-DATA-POOL</internal-ip-pool>
+        </resource-pools>
+        <vnf-mgmt-resources>
+            <vnf-mgmt-netmask>255.255.254.0</vnf-mgmt-netmask>
+            <vnf-mgmt-vlan>60</vnf-mgmt-vlan>
+            <vnf-mgmt-gateway>10.1.60.1</vnf-mgmt-gateway>
+        </vnf-mgmt-resources>
         <infrastructure>
             <switching>
                 <type xmlns:cisco-sae-core-fp-common="http://com/cisco/nso/sae-core-fp-common">cisco-sae-core-fp-common:n9k-switch-pair</type>

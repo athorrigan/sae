@@ -2,7 +2,7 @@
   <sae-catalog xmlns="http://com/cisco/nso/sae-core-fp-cfs">
     <name>SAE-Catalog</name>
     <csp>
-      <name>SAE-NFV-CSP2100</name>
+      <name>SVS-NFV-CSP2100</name>
       <sriov-networks>
         <name>enp129s0f0</name>
       </sriov-networks>

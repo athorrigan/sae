@@ -3,14 +3,5 @@
         <site>SVS-RTP</site>
         <sae-provider>SAE-Provider</sae-provider>
         <sae-tenant>SAE-Tenant</sae-tenant>
-        <resource-pools>
-            <mgmt-ip-pool>IP-MGMT-POOL</mgmt-ip-pool>
-            <internal-ip-pool>IP-DATA-POOL</internal-ip-pool>
-        </resource-pools>
-        <vnf-mgmt-resources>
-            <vnf-mgmt-netmask>255.255.254.0</vnf-mgmt-netmask>
-            <vnf-mgmt-vlan>60</vnf-mgmt-vlan>
-            <vnf-mgmt-gateway>10.1.60.1</vnf-mgmt-gateway>
-        </vnf-mgmt-resources>
     </sae-site>
 </config>
