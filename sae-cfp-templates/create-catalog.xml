@@ -1,0 +1,23 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <sae-catalog xmlns="http://com/cisco/nso/sae-core-fp-cfs">
+    <name>SAE-Catalog</name>
+    <csp>
+      <name>SAE-NFV-CSP2100</name>
+      <sriov-networks>
+        <name>enp129s0f0</name>
+      </sriov-networks>
+      <sriov-networks>
+        <name>enp129s0f1</name>
+      </sriov-networks>
+      <mgmt-network>enp1s0f0</mgmt-network>
+    </csp>
+  </sae-catalog>
+  <sae-provider xmlns="http://com/cisco/nso/sae-core-fp-cfs">
+    <name>SAE-Provider</name>
+    <sae-provider-catalog>SAE-Catalog</sae-provider-catalog>
+    <sae-tenant>
+      <name>SAE-Tenant</name>
+      <sae-tenant-catalog>SAE-Catalog</sae-tenant-catalog>
+    </sae-tenant>
+  </sae-provider>
+</config>
